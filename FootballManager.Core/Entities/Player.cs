@@ -18,7 +18,7 @@ public class Player
     public int TeamId { get; set; }
     public Team Team { get; set; }
 
-    public ICollection<PlayerStat> PlayerStats { get; set; }
+    public ICollection<Statistics> PlayerStats { get; set; }
 }
 
 

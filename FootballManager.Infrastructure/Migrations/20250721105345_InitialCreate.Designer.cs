@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FootballManager.Infrastructure.Migrations
 {
-    [DbContext(typeof(FootballDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20250721105345_InitialCreate")]
     partial class InitialCreate
     {

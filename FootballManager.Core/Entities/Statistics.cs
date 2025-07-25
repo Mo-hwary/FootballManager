@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FootballManager.Core.Entities
 {
-    public class PlayerStat
+    public class Statistics
     {
         public int Id { get; set; }
         public int PlayerId { get; set; }

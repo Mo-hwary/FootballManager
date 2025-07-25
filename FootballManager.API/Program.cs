@@ -16,7 +16,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<ITeamService, TeamService>();
 builder.Services.AddScoped<IPlayerService, PlayerService>();
 builder.Services.AddScoped<IMatchService, MatchService>();
-builder.Services.AddScoped<IPlayerStatService, PlayerStatService>();
+builder.Services.AddScoped<IStatisticsService, StatisticsService>();
 
 
 

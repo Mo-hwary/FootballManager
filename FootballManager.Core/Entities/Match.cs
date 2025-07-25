@@ -20,7 +20,7 @@ public class Match
     public Team HomeTeam { get; set; }
     public Team AwayTeam { get; set; }
 
-    public ICollection<PlayerStat> PlayerStats { get; set; }
+    public ICollection<Statistics> PlayerStats { get; set; }
 }
 
 

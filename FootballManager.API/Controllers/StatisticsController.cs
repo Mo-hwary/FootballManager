@@ -9,9 +9,9 @@ namespace FootballManager.API.Controllers
     [Route("api/[controller]")]
     public class StatisticsController : ControllerBase
     {
-        private readonly IPlayerStatService _statService;
+        private readonly IStatisticsService _statService;
 
-        public StatisticsController(IPlayerStatService statService)
+        public StatisticsController(IStatisticsService statService)
         {
             _statService = statService;
         }
@@ -31,7 +31,7 @@ namespace FootballManager.API.Controllers
         }
 
         [HttpPost("matches/{matchId}/stats")]
-        public async Task<IActionResult> AddPlayerStat(int matchId, [FromBody] CreatePlayerStatDto dto)
+        public async Task<IActionResult> AddPlayerStat(int matchId, [FromBody] CreateStatisticsDto dto)
         {
             var created = await _statService.AddStatToMatchAsync(matchId, dto);
             return Ok(created);

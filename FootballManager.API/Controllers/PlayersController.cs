@@ -7,11 +7,11 @@ namespace FootballManager.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PlayerController : ControllerBase
+    public class PlayersController : ControllerBase
     {
         private readonly IPlayerService _playerService;
 
-        public PlayerController(IPlayerService playerService)
+        public PlayersController(IPlayerService playerService)
         {
             _playerService = playerService;
         }
@@ -27,7 +27,7 @@ namespace FootballManager.API.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var player = await _playerService.GetPlayerByIdAsync(id);
-            if (player == null) return NotFound();
+            if (player == null) return NotFound($"Player with ID '{id}' not found.");
             return Ok(player);
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace FootballManager.Core.DTOs
 {
-    public class PlayerStatDto
+    public class StatisticsDto
     {
         public int Id { get; set; }
         public int PlayerId { get; set; }
@@ -13,4 +13,4 @@
         public int YellowCards { get; set; }
         public int RedCards { get; set; }
     }
-}
+} 

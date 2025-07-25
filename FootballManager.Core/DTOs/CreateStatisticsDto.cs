@@ -1,6 +1,6 @@
 ﻿namespace FootballManager.Core.DTOs
 {
-    public class CreatePlayerStatDto
+    public class CreateStatisticsDto
     {
         public int PlayerId { get; set; }
         public int Goals { get; set; }

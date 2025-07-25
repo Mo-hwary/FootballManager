@@ -6,11 +6,11 @@ namespace FootballManager.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class MatchController : ControllerBase
+    public class MatchesController : ControllerBase
     {
         private readonly IMatchService _matchService;
 
-        public MatchController(IMatchService matchService)
+        public MatchesController(IMatchService matchService)
         {
             _matchService = matchService;
         }

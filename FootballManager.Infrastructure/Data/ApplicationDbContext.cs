@@ -12,7 +12,7 @@ namespace FootballManager.Infrastructure.Data
         public DbSet<Team> Teams => Set<Team>();
         public DbSet<Player> Players => Set<Player>();
         public DbSet<Match> Matches => Set<Match>();
-        public DbSet<PlayerStat> PlayerStats => Set<PlayerStat>();
+        public DbSet<Statistics> PlayerStats => Set<Statistics>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,14 +34,14 @@ namespace FootballManager.Infrastructure.Data
                 .HasOne(m => m.HomeTeam)
                 .WithMany(t => t.HomeMatches)
                 .HasForeignKey(m => m.HomeTeamId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Team - AwayMatches
             modelBuilder.Entity<Match>()
                 .HasOne(m => m.AwayTeam)
                 .WithMany(t => t.AwayMatches)
                 .HasForeignKey(m => m.AwayTeamId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             // Match - PlayerStats
             modelBuilder.Entity<Match>()
