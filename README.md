@@ -78,7 +78,7 @@ Make sure the connection string in `FootballManager.API/appsettings.json` is cor
 
 ```json
 "ConnectionStrings": {
-  "DefaultConnection": "Server=(localdb)\MSSQLLocalDB;Database=FootballManagerDb;Trusted_Connection=True;"
+  "DefaultConnection": "Server=HWARY\SQLEXPRESS;Database=FootballManagerDb;Trusted_Connection=True;"
 }
 ```
 
