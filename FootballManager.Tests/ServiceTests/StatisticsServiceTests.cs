@@ -58,7 +58,7 @@ namespace FootballManager.Tests.ServiceTests
             var players = new List<Player>
             {
                 new Player { Id = 1, TeamId = 5, Name = "A" },
-                new Player { Id = 2, TeamId = 5, Name = "B" } // ملوش إحصائيات
+                new Player { Id = 2, TeamId = 5, Name = "B" } 
             };
 
             var stats = new List<Statistics>
@@ -71,7 +71,6 @@ namespace FootballManager.Tests.ServiceTests
 
             var result = await _service.GetStatsByTeamIdAsync(5);
 
-            // يرجع 2: واحد عنده إحصائيات + واحد بدون (قيمة صفرية)
             Assert.Equal(2, result.Count());
             Assert.Contains(result, r => r.PlayerId == 2 && r.Goals == 0);
         }
