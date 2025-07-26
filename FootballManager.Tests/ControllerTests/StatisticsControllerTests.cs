@@ -42,7 +42,7 @@ namespace FootballManager.Tests.ControllerTests
                 .ReturnsAsync(new List<StatisticsDto>
                 {
                     new StatisticsDto{ Id = 1, PlayerId = 7, Goals = 1 },
-                    new StatisticsDto{ Id = 0, PlayerId = 8, Goals = 0 } // لاعب بلا إحصائيات
+                    new StatisticsDto{ Id = 0, PlayerId = 8, Goals = 0 } 
                 });
 
             var result = await _controller.GetTeamStats(5);
