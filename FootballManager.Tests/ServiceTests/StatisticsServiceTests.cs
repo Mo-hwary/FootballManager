@@ -17,11 +17,11 @@ namespace FootballManager.Tests.ServiceTests
 
         private readonly StatisticsService _service;
 
-        public StatisticsServiceTests()
+        public StatisticsServiceTests(IStatsRepo statsRepo)
         {
-            _service = new StatisticsService(_statRepoMock.Object, _playerRepoMock.Object);
+        _service= new StatisticsService(statsRepo, _playerRepoMock.Object);
         }
-
+        
         [Fact]
         public async Task GetStatsByPlayerIdAsync_PlayerNotFound_ReturnsEmpty()
         {
@@ -71,7 +71,6 @@ namespace FootballManager.Tests.ServiceTests
 
             var result = await _service.GetStatsByTeamIdAsync(5);
 
-            // يرجع 2: واحد عنده إحصائيات + واحد بدون (قيمة صفرية)
             Assert.Equal(2, result.Count());
             Assert.Contains(result, r => r.PlayerId == 2 && r.Goals == 0);
         }

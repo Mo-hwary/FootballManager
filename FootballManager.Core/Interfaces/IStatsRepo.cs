@@ -1,0 +1,14 @@
+﻿using FootballManager.Core.DTOs;
+using FootballManager.Core.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FootballManager.Core.Interfaces;
+
+public interface IStatsRepo : IRepository<Statistics>
+{
+    Task<IEnumerable<Statistics>> GetAllStatAsync(int teamId);
+}

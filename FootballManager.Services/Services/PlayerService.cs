@@ -23,13 +23,10 @@ namespace FootballManager.Services.Services
         public async Task<IEnumerable<PlayerDto>> GetAllPlayersAsync()
         {
             var players = await _playerRepository.GetAllAsync();
-            var result = new List<PlayerDto>();
+            var teams = await _teamRepository.GetAllAsync();
 
-            foreach (var p in players)
-            {
-                var team = await _teamRepository.GetByIdAsync(p.TeamId);
-
-                result.Add(new PlayerDto
+            var playerDtos = players
+                .Select(p => new PlayerDto
                 {
                     Id = p.Id,
                     Name = p.Name,
@@ -37,12 +34,15 @@ namespace FootballManager.Services.Services
                     Nationality = p.Nationality,
                     Position = p.Position,
                     TeamId = p.TeamId,
-                    TeamName = team?.Name
-                });
-            }
+                    TeamName = teams.FirstOrDefault(t => t.Id == p.TeamId)?.Name ?? ""
+                })
+                .OrderBy(p => p.TeamName) 
+                .ThenBy(p => p.Name)      
+                .ToList();
 
-            return result;
+            return playerDtos;
         }
+
 
         public async Task<PlayerDto> GetPlayerByIdAsync(int id)
         {

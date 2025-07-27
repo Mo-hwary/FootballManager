@@ -17,8 +17,7 @@ builder.Services.AddScoped<ITeamService, TeamService>();
 builder.Services.AddScoped<IPlayerService, PlayerService>();
 builder.Services.AddScoped<IMatchService, MatchService>();
 builder.Services.AddScoped<IStatisticsService, StatisticsService>();
-
-
+builder.Services.AddScoped<IStatsRepo, StatsRepo>();
 
 
 //connection string 
