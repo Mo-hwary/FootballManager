@@ -1,6 +1,6 @@
 ﻿using FootballManager.Core.DTOs;
 using FootballManager.Core.Entities;
-using FootballManager.Core.Interfaces;
+using FootballManager.Core.InterfacesRepo;
 using FootballManager.Services.Services;
 using Moq;
 using System;

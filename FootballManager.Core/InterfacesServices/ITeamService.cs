@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FootballManager.Core.Interfaces
+namespace FootballManager.Core.InterfacesServices
 {
     public interface ITeamService
     {

@@ -1,6 +1,6 @@
 ﻿using FootballManager.Core.DTOs;
 using FootballManager.Core.Entities;
-using FootballManager.Core.Interfaces;
+using FootballManager.Core.InterfacesServices;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;

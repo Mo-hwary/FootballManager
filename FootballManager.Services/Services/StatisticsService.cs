@@ -1,6 +1,7 @@
 ﻿using FootballManager.Core.DTOs;
 using FootballManager.Core.Entities;
 using FootballManager.Core.Interfaces;
+using FootballManager.Core.InterfacesRepo;
 using FootballManager.Infrastructure.Repositories;
 using System.Numerics;
 

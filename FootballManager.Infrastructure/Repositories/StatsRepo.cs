@@ -1,4 +1,5 @@
-﻿using FootballManager.Infrastructure.Data;
+﻿using FootballManager.Core.InterfacesRepo;
+using FootballManager.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FootballManager.Infrastructure.Repositories;
 
-public class StatsRepo: Repository<Core.Entities.Statistics>, Core.Interfaces.IStatsRepo
+public class StatsRepo: Repository<Core.Entities.Statistics>, IStatsRepo
 {
     public StatsRepo(ApplicationDbContext context) : base(context)
     {

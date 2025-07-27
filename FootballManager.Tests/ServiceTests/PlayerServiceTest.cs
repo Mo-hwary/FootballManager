@@ -1,12 +1,12 @@
 ﻿using FootballManager.Core.DTOs;
 using FootballManager.Core.Entities;
-using FootballManager.Core.Interfaces;
 using FootballManager.Services.Services;
 using Moq;
 using Xunit;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
+using FootballManager.Core.InterfacesRepo;
 
 namespace FootballManager.Tests.ServiceTests
 {

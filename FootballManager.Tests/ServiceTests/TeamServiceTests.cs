@@ -3,12 +3,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using FootballManager.Core.DTOs;
 using FootballManager.Core.Entities;
-using FootballManager.Core.Interfaces;
 using FootballManager.Services.Services;
 using FootballManager.API.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;
+using FootballManager.Core.InterfacesRepo;
 
 namespace FootballManager.Tests.ServiceTests
 {

@@ -1,6 +1,7 @@
 ﻿using FootballManager.Core.DTOs;
 using FootballManager.Core.Entities;
-using FootballManager.Core.Interfaces;
+using FootballManager.Core.InterfacesRepo;
+using FootballManager.Core.InterfacesServices;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

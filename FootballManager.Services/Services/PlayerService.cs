@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FootballManager.Core.DTOs;
 using FootballManager.Core.Entities;
 using FootballManager.Core.Interfaces;
+using FootballManager.Core.InterfacesRepo;
 
 namespace FootballManager.Services.Services
 {

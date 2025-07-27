@@ -1,6 +1,6 @@
 ﻿using FootballManager.Core.DTOs;
 using FootballManager.Core.Entities;
-using FootballManager.Core.Interfaces;
+using FootballManager.Core.InterfacesRepo;
 using FootballManager.Services.Services;
 using Moq;
 using System.Collections.Generic;
@@ -58,7 +58,7 @@ namespace FootballManager.Tests.ServiceTests
             var players = new List<Player>
             {
                 new Player { Id = 1, TeamId = 5, Name = "A" },
-                new Player { Id = 2, TeamId = 5, Name = "B" } 
+                new Player { Id = 2, TeamId = 5, Name = "B" } // ملوش إحصائيات
             };
 
             var stats = new List<Statistics>

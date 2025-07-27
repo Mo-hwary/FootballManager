@@ -3,8 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using FootballManager.Core.Interfaces;
 using FootballManager.Infrastructure.Repositories;
 using FootballManager.Services.Services;
-using FootballManager.Core.Interfaces;
 using FootballManager.Services.Services;
+using FootballManager.Core.InterfacesRepo;
+using FootballManager.Core.InterfacesServices;
 
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,4 +1,4 @@
-﻿using FootballManager.Core.Interfaces;
+﻿using FootballManager.Core.InterfacesRepo;
 using FootballManager.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
