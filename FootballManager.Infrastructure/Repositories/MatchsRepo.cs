@@ -11,7 +11,7 @@ namespace FootballManager.Infrastructure.Repositories
     public class MatchsRepo : Repository<Core.Entities.Match>
     {
         public MatchsRepo(ApplicationDbContext context) : base(context)
-        {
+        { 
         }
     }
 }

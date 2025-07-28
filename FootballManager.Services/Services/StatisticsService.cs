@@ -42,6 +42,8 @@ namespace FootballManager.Services.Services
                 Id = s.Id,
                 PlayerId = s.PlayerId,
                 PlayerName = player.Name,
+                TeamId = s.Player?.TeamId ?? 0,
+                TeamName = s.Player?.Team?.Name ?? "Unknown",
                 MatchId = s.MatchId,
                 Goals = s.GoalsScored,
                 Assists = s.Assists,
@@ -54,6 +56,9 @@ namespace FootballManager.Services.Services
         public async Task<IEnumerable<StatisticsDto>> GetStatsByTeamIdAsync(int teamId)
         {
             var stat = await statsRepo.GetAllStatAsync(teamId);
+            if (stat == null)
+                return Enumerable.Empty<StatisticsDto>();
+            var stats = stat.Where(s => s.PlayerId == teamId).ToList();
 
             if (!stat.Any())
             {
@@ -80,6 +85,8 @@ namespace FootballManager.Services.Services
                 Id = s.Id,
                 PlayerId = s.PlayerId,
                 PlayerName = s.Player.Name,
+                TeamId = s.Player?.TeamId ?? 0,
+                TeamName = s.Player?.Team?.Name ?? "Unknown",
                 MatchId = s.MatchId,
                 Goals = s.GoalsScored,
                 Assists = s.Assists,
@@ -100,6 +107,7 @@ namespace FootballManager.Services.Services
             {
                 PlayerId = dto.PlayerId,
                 MatchId = matchId,
+                TeamId = player.TeamId,
                 GoalsScored = dto.Goals,
                 Assists = dto.Assists,
                 MinutesPlayed = dto.MinutesPlayed,
@@ -114,6 +122,7 @@ namespace FootballManager.Services.Services
                 Id = created.Id,
                 PlayerId = created.PlayerId,
                 MatchId = created.MatchId,
+                TeamId = created.TeamId,
                 Goals = created.GoalsScored,
                 Assists = created.Assists,
                 MinutesPlayed = created.MinutesPlayed,

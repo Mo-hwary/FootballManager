@@ -3,6 +3,7 @@
     public class CreateStatisticsDto
     {
         public int PlayerId { get; set; }
+        public int TeamId { get; set; }
         public int Goals { get; set; }
         public int Assists { get; set; }
         public int MinutesPlayed { get; set; }

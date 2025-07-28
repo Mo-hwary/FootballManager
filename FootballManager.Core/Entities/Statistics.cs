@@ -14,6 +14,7 @@ namespace FootballManager.Core.Entities
         public int Id { get; set; }
         public int PlayerId { get; set; }
         public int TeamId { get; set; }
+
         public int MatchId { get; set; }
 
         public int GoalsScored { get; set; }
@@ -24,6 +25,7 @@ namespace FootballManager.Core.Entities
 
         public Player Player { get; set; }
         public Match Match { get; set; }
+
 
     }
 }

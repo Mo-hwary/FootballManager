@@ -16,7 +16,12 @@ public class StatsRepo: Repository<Core.Entities.Statistics>, IStatsRepo
     }
     public async Task<IEnumerable<Core.Entities.Statistics>> GetAllStatAsync(int teamId)
     {
-        return await _context.PlayerStats.Where(t=>t.TeamId == teamId).ToListAsync();
+        return await _context.PlayerStats
+            .Include(s => s.Player) 
+            .ThenInclude(p => p.Team) 
+            .Where(s => s.TeamId == teamId)
+            .ToListAsync();
     }
+
 }
 
